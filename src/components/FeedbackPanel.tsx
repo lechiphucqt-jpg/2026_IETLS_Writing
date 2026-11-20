@@ -149,7 +149,7 @@ export function FeedbackPanel({
         <button
           type="button"
           onClick={onBackToEditor}
-          className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-700 hover:text-blue-900 transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-700 hover:text-emerald-800 transition-colors"
         >
           <ArrowLeft className="h-4 w-4" />
           <span>Quay lại Trình Soạn Thảo</span>
@@ -161,10 +161,10 @@ export function FeedbackPanel({
             type="button"
             onClick={handleExportWord}
             disabled={!markdown}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-xs font-semibold text-blue-900 hover:bg-slate-50 disabled:opacity-40 shadow-xs"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-xs font-semibold text-emerald-800 hover:bg-slate-50 disabled:opacity-40 shadow-xs"
             title="Xuất file Word (.docx / .doc) với Track Changes và Comments"
           >
-            <FileDown className="h-3.5 w-3.5 text-blue-700" />
+            <FileDown className="h-3.5 w-3.5 text-emerald-600" />
             <span>Xuất Word (.doc)</span>
           </button>
 
@@ -199,7 +199,7 @@ export function FeedbackPanel({
             className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors shadow-xs ${
               isSaved
                 ? 'bg-emerald-100 text-emerald-800'
-                : 'bg-blue-900 text-white hover:bg-blue-800 disabled:bg-slate-200 disabled:text-slate-500'
+                : 'bg-emerald-700 text-white hover:bg-emerald-800 disabled:bg-slate-200 disabled:text-slate-500'
             }`}
           >
             {isSaved ? <BookmarkCheck className="h-3.5 w-3.5" /> : <BookmarkPlus className="h-3.5 w-3.5" />}
@@ -228,22 +228,22 @@ export function FeedbackPanel({
 
         {/* Multi-Agent Steps Status (When Running) */}
         {agentSteps.length > 0 && isAnalyzing && (
-          <div className="rounded-xl border border-blue-200 bg-blue-50/60 p-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-blue-900 mb-3 flex items-center gap-1.5">
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-3 flex items-center gap-1.5">
               <Bot className="h-4 w-4" />
               Tiến trình Multi-Agent Đang Xử Lý:
             </h4>
             <div className="space-y-2">
               {agentSteps.map((step) => (
-                <div key={step.id} className="flex items-center justify-between text-xs bg-white p-2.5 rounded-lg border border-blue-100 shadow-2xs">
+                <div key={step.id} className="flex items-center justify-between text-xs bg-white p-2.5 rounded-lg border border-emerald-100 shadow-2xs">
                   <div>
                     <span className="font-semibold text-slate-800">{step.name}</span>
                     <p className="text-[11px] text-slate-500">{step.roleDescription}</p>
                   </div>
                   <div>
                     {step.status === 'running' && (
-                      <span className="flex items-center gap-1.5 font-semibold text-blue-700">
-                        <span className="h-2 w-2 rounded-full bg-blue-600 animate-ping" />
+                      <span className="flex items-center gap-1.5 font-semibold text-emerald-600">
+                        <span className="h-2 w-2 rounded-full bg-emerald-600 animate-ping" />
                         Đang phân tích...
                       </span>
                     )}
@@ -276,10 +276,10 @@ export function FeedbackPanel({
                 Official IELTS Assessment
               </span>
               <div className="mt-1 flex items-baseline gap-3">
-                <span className="font-serif text-4xl font-extrabold text-blue-950">
+                <span className="font-serif text-4xl font-extrabold text-emerald-950">
                   {bandScores.overall !== null ? bandScores.overall.toFixed(1) : isAnalyzing ? '...' : '—'}
                 </span>
-                <span className="font-medium text-sm text-blue-900">
+                <span className="font-medium text-sm text-emerald-800">
                   {bandDescriptor(bandScores.overall)}
                 </span>
               </div>
@@ -310,10 +310,10 @@ export function FeedbackPanel({
 
         {/* Academic Advisor Chat (Post-Analysis) */}
         {markdown && (
-          <div className="rounded-xl border border-blue-200 bg-blue-50/40 p-5 shadow-xs">
-            <div className="flex items-center gap-2 border-b border-blue-200 pb-3">
-              <Sparkles className="h-4 w-4 text-blue-700" />
-              <h3 className="font-serif text-base font-bold text-blue-950">
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50/40 p-5 shadow-xs">
+            <div className="flex items-center gap-2 border-b border-emerald-200 pb-3">
+              <Sparkles className="h-4 w-4 text-emerald-600" />
+              <h3 className="font-serif text-base font-bold text-emerald-950">
                 Hỏi Đáp Chuyên Sâu Cùng Cố Vấn Học Thuật (Academic Advisor)
               </h3>
             </div>
@@ -325,7 +325,7 @@ export function FeedbackPanel({
                   key={q}
                   onClick={() => askAdvisor(q)}
                   disabled={isAsking}
-                  className="rounded-lg border border-blue-200 bg-white px-3 py-1.5 text-xs text-blue-900 hover:bg-blue-50 font-medium transition-colors shadow-2xs disabled:opacity-50"
+                  className="rounded-lg border border-emerald-200 bg-white px-3 py-1.5 text-xs text-emerald-800 hover:bg-emerald-50 font-medium transition-colors shadow-2xs disabled:opacity-50"
                 >
                   + {q}
                 </button>
@@ -340,7 +340,7 @@ export function FeedbackPanel({
                     key={idx}
                     className={`rounded-lg p-3 text-xs leading-relaxed ${
                       msg.role === 'user'
-                        ? 'bg-blue-900 text-white ml-8 font-medium'
+                        ? 'bg-emerald-700 text-white ml-8 font-medium'
                         : 'bg-white text-slate-800 border border-slate-200 mr-8'
                     }`}
                   >
@@ -358,13 +358,13 @@ export function FeedbackPanel({
                 onChange={(e) => setQuestionInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && askAdvisor(questionInput)}
                 placeholder="Đặt câu hỏi cho AI (ví dụ: Viết lại đoạn Conclusion theo văn phong trang trọng hơn)..."
-                className="flex-1 rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-xs focus:border-blue-700 focus:outline-none"
+                className="flex-1 rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-xs focus:border-emerald-600 focus:outline-none"
               />
               <button
                 type="button"
                 onClick={() => askAdvisor(questionInput)}
                 disabled={isAsking || !questionInput.trim()}
-                className="rounded-lg bg-blue-900 px-4 py-2 text-xs font-semibold text-white hover:bg-blue-800 disabled:opacity-50 shadow-xs flex items-center gap-1.5"
+                className="rounded-lg bg-emerald-700 px-4 py-2 text-xs font-semibold text-white hover:bg-emerald-800 disabled:opacity-50 shadow-xs flex items-center gap-1.5"
               >
                 <Send className="h-3.5 w-3.5" />
                 <span>Gửi</span>

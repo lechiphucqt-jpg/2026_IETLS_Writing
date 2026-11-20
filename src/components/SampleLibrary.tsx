@@ -37,12 +37,12 @@ export function SampleLibrary({ prompts, onPracticePrompt }: SampleLibraryProps)
                 onClick={() => setSelectedId(item.id)}
                 className={`w-full rounded-lg border px-4 py-3 text-left transition-colors ${
                   active
-                    ? 'border-blue-700 bg-blue-50/50'
+                    ? 'border-emerald-600 bg-emerald-50/50'
                     : 'border-slate-200 bg-white hover:border-slate-300'
                 }`}
               >
                 <div className="flex items-center gap-2 text-xs text-slate-500">
-                  <span className="font-semibold text-blue-900">{item.taskType}</span>
+                  <span className="font-semibold text-emerald-800">{item.taskType}</span>
                   <span aria-hidden="true">·</span>
                   <span>{item.category}</span>
                 </div>
@@ -58,7 +58,7 @@ export function SampleLibrary({ prompts, onPracticePrompt }: SampleLibraryProps)
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-4">
               <div>
                 <div className="flex items-center gap-2 text-xs text-slate-500">
-                  <span className="font-semibold text-blue-900">{selected.taskType}</span>
+                  <span className="font-semibold text-emerald-800">{selected.taskType}</span>
                   <span aria-hidden="true">·</span>
                   <span>{selected.category}</span>
                   <span aria-hidden="true">·</span>
@@ -72,7 +72,7 @@ export function SampleLibrary({ prompts, onPracticePrompt }: SampleLibraryProps)
               <button
                 type="button"
                 onClick={() => onPracticePrompt(selected)}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-blue-900 px-3.5 py-2 text-xs font-medium text-white hover:bg-blue-800 whitespace-nowrap shrink-0"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-700 px-3.5 py-2 text-xs font-medium text-white hover:bg-emerald-800 whitespace-nowrap shrink-0"
               >
                 <span>Practice This Topic</span>
                 <ArrowRight className="h-3.5 w-3.5" />
@@ -120,7 +120,7 @@ export function SampleLibrary({ prompts, onPracticePrompt }: SampleLibraryProps)
                   <tbody className="divide-y divide-slate-200">
                     {selected.sampleCollocations.map((col) => (
                       <tr key={col.phrase}>
-                        <td className="px-3.5 py-2.5 font-medium text-blue-950">{col.phrase}</td>
+                        <td className="px-3.5 py-2.5 font-medium text-emerald-950">{col.phrase}</td>
                         <td className="px-3.5 py-2.5 text-slate-700">{col.meaningVi}</td>
                       </tr>
                     ))}

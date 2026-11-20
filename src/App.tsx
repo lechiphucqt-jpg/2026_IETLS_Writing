@@ -23,6 +23,7 @@ import { SettingsModal } from './components/SettingsModal';
 import { getStoredAiSettings, runMultiAgentAnalysis } from './utils/geminiAi';
 
 const HISTORY_STORAGE_KEY = 'ielts_writing_master_history_v1';
+const CUSTOM_PROMPTS_KEY = 'ielts_writing_custom_prompts_v1';
 
 const EMPTY_OUTLINE: OutlineState = {
   introOrThesis: '',
@@ -33,7 +34,29 @@ const EMPTY_OUTLINE: OutlineState = {
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<NavTab>('workspace');
-  const [activePromptId, setActivePromptId] = useState<string>(IELTS_PROMPTS[0].id);
+  const [customPrompts, setCustomPrompts] = useState<IeltsPrompt[]>(() => {
+    try {
+      const raw = localStorage.getItem(CUSTOM_PROMPTS_KEY);
+      return raw ? (JSON.parse(raw) as IeltsPrompt[]) : [];
+    } catch {
+      return [];
+    }
+  });
+
+  const allPrompts = useMemo(() => {
+    return [...customPrompts, ...IELTS_PROMPTS];
+  }, [customPrompts]);
+
+  const [activePromptId, setActivePromptId] = useState<string>(() => {
+    try {
+      const raw = localStorage.getItem(CUSTOM_PROMPTS_KEY);
+      const custom = raw ? (JSON.parse(raw) as IeltsPrompt[]) : [];
+      return custom.length > 0 ? custom[0].id : IELTS_PROMPTS[0].id;
+    } catch {
+      return IELTS_PROMPTS[0].id;
+    }
+  });
+
   const [isCustomPrompt, setIsCustomPrompt] = useState(false);
   const [customTaskType, setCustomTaskType] = useState<TaskType>('Task 2');
   const [customPromptText, setCustomPromptText] = useState('');
@@ -70,9 +93,36 @@ export default function App() {
   }, [history]);
 
   const activePrompt = useMemo(
-    () => IELTS_PROMPTS.find((p) => p.id === activePromptId) ?? IELTS_PROMPTS[0],
-    [activePromptId],
+    () => allPrompts.find((p) => p.id === activePromptId) ?? allPrompts[0] ?? IELTS_PROMPTS[0],
+    [allPrompts, activePromptId],
   );
+
+  const handleImportPrompts = (newPrompts: IeltsPrompt[]) => {
+    setCustomPrompts((prev) => {
+      const updated = [...newPrompts, ...prev];
+      try {
+        localStorage.setItem(CUSTOM_PROMPTS_KEY, JSON.stringify(updated));
+      } catch {}
+      return updated;
+    });
+    if (newPrompts.length > 0) {
+      setActivePromptId(newPrompts[0].id);
+      setIsCustomPrompt(false);
+    }
+  };
+
+  const handleDeleteCustomPrompt = (id: string) => {
+    setCustomPrompts((prev) => {
+      const updated = prev.filter((p) => p.id !== id);
+      try {
+        localStorage.setItem(CUSTOM_PROMPTS_KEY, JSON.stringify(updated));
+      } catch {}
+      return updated;
+    });
+    if (activePromptId === id) {
+      setActivePromptId(IELTS_PROMPTS[0].id);
+    }
+  };
 
   const bandScores: BandScores = useMemo(
     () => parseBandScoresFromMarkdown(analysisMarkdown),
@@ -222,7 +272,7 @@ export default function App() {
       <main>
         {activeTab === 'workspace' && (
           <Workspace
-            prompts={IELTS_PROMPTS}
+            prompts={allPrompts}
             activePrompt={activePrompt}
             isCustomPrompt={isCustomPrompt}
             customTaskType={customTaskType}
@@ -265,15 +315,17 @@ export default function App() {
 
         {activeTab === 'prompts' && (
           <PromptBank
-            prompts={IELTS_PROMPTS}
+            prompts={allPrompts}
             activePromptId={activePrompt.id}
             onSelectPrompt={handleSelectPromptFromBank}
+            onImportPrompts={handleImportPrompts}
+            onDeletePrompt={handleDeleteCustomPrompt}
           />
         )}
 
         {activeTab === 'samples' && (
           <SampleLibrary
-            prompts={IELTS_PROMPTS}
+            prompts={allPrompts}
             onPracticePrompt={handleSelectPromptFromBank}
           />
         )}

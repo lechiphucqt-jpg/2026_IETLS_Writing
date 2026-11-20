@@ -80,6 +80,7 @@ export interface IeltsPrompt {
   examinerNotes: string;
   sampleCollocations: Array<{ phrase: string; meaningVi: string }>;
   starterDraft: string;
+  isCustomImported?: boolean;
 }
 
 export interface PracticeHistoryItem {

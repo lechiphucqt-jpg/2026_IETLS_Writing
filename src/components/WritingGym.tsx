@@ -203,7 +203,7 @@ export function WritingGym() {
           onClick={() => setActiveMode('collocation')}
           className={`inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-all ${
             activeMode === 'collocation'
-              ? 'bg-blue-900 text-white shadow-xs'
+              ? 'bg-emerald-700 text-white shadow-xs'
               : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
           }`}
         >
@@ -214,7 +214,7 @@ export function WritingGym() {
           onClick={() => setActiveMode('syntax')}
           className={`inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-all ${
             activeMode === 'syntax'
-              ? 'bg-blue-900 text-white shadow-xs'
+              ? 'bg-emerald-700 text-white shadow-xs'
               : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
           }`}
         >
@@ -241,9 +241,9 @@ export function WritingGym() {
           </div>
 
           {/* Big Verb Card */}
-          <div className="my-8 flex flex-col items-center justify-center rounded-xl bg-blue-50/60 border border-blue-100 py-10">
-            <span className="text-xs font-semibold uppercase tracking-wider text-blue-700">Academic Verb</span>
-            <div className="mt-2 font-serif text-4xl font-extrabold text-blue-950 tracking-wide">
+          <div className="my-8 flex flex-col items-center justify-center rounded-xl bg-emerald-50/60 border border-emerald-100 py-10">
+            <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">Academic Verb</span>
+            <div className="mt-2 font-serif text-4xl font-extrabold text-emerald-950 tracking-wide">
               {currentColloc.verb} ...
             </div>
             <div className="mt-2 text-sm text-slate-600 italic">
@@ -257,7 +257,7 @@ export function WritingGym() {
               const isSelected = selectedNoun === noun;
               const isCorrect = noun === currentColloc.noun;
 
-              let btnStyle = 'border-slate-200 hover:border-blue-400 hover:bg-blue-50/30 text-slate-800';
+              let btnStyle = 'border-slate-200 hover:border-emerald-400 hover:bg-emerald-50/30 text-slate-800';
               if (collocFeedback !== null) {
                 if (isCorrect) {
                   btnStyle = 'border-emerald-500 bg-emerald-50 text-emerald-900 font-semibold';
@@ -310,7 +310,7 @@ export function WritingGym() {
 
               <button
                 onClick={() => setCollocIndex((prev) => prev + 1)}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-blue-900 px-4 py-2 text-sm font-medium text-white hover:bg-blue-800"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-700 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-800"
               >
                 <span>Cụm tiếp theo</span>
                 <ArrowRight className="h-4 w-4" />
@@ -333,7 +333,7 @@ export function WritingGym() {
           </div>
 
           {/* Assembly Board */}
-          <div className="my-6 min-h-[120px] rounded-xl border-2 border-dashed border-blue-200 bg-slate-50/80 p-5 flex flex-wrap items-center gap-2">
+          <div className="my-6 min-h-[120px] rounded-xl border-2 border-dashed border-emerald-200 bg-slate-50/80 p-5 flex flex-wrap items-center gap-2">
             {chosenOrder.length === 0 ? (
               <span className="text-sm text-slate-400 italic">Nhấp vào các mảnh ghép bên dưới để xếp vào đây...</span>
             ) : (
@@ -342,7 +342,7 @@ export function WritingGym() {
                   key={frag}
                   onClick={() => handleRemoveFragment(frag)}
                   disabled={puzzleSubmitted}
-                  className="rounded-lg bg-blue-900 px-3 py-1.5 text-sm font-medium text-white shadow-xs hover:bg-blue-800 transition-colors"
+                  className="rounded-lg bg-emerald-700 px-3 py-1.5 text-sm font-medium text-white shadow-xs hover:bg-emerald-800 transition-colors"
                 >
                   {frag} ✕
                 </button>
@@ -357,7 +357,7 @@ export function WritingGym() {
                 key={frag}
                 onClick={() => handlePickFragment(frag)}
                 disabled={puzzleSubmitted}
-                className="rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-sm font-medium text-slate-800 hover:border-blue-500 hover:bg-blue-50/50 shadow-xs transition-colors"
+                className="rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-sm font-medium text-slate-800 hover:border-emerald-500 hover:bg-emerald-50/50 shadow-xs transition-colors"
               >
                 + {frag}
               </button>
@@ -382,14 +382,14 @@ export function WritingGym() {
               <button
                 onClick={checkPuzzle}
                 disabled={chosenOrder.length !== currentPuzzle.fragments.length}
-                className="rounded-lg bg-blue-900 px-5 py-2 text-sm font-medium text-white hover:bg-blue-800 disabled:opacity-50"
+                className="rounded-lg bg-emerald-700 px-5 py-2 text-sm font-medium text-white hover:bg-emerald-800 disabled:opacity-50"
               >
                 Kiểm tra câu
               </button>
             ) : (
               <button
                 onClick={() => setPuzzleIndex((prev) => prev + 1)}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-blue-900 px-4 py-2 text-sm font-medium text-white hover:bg-blue-800"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-700 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-800"
               >
                 <span>Câu đố tiếp theo</span>
                 <ArrowRight className="h-4 w-4" />

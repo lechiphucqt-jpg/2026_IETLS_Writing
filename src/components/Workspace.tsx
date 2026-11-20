@@ -294,7 +294,7 @@ export function Workspace({
 
           {!isCustomPrompt ? (
             <div className="flex items-center gap-2 text-xs text-slate-600 min-w-0">
-              <span className="font-semibold text-blue-900 whitespace-nowrap">
+              <span className="font-semibold text-emerald-800 whitespace-nowrap">
                 {activePrompt.taskType}
               </span>
               <span aria-hidden="true">·</span>
@@ -308,7 +308,7 @@ export function Workspace({
             </div>
           ) : (
             <div className="flex items-center gap-2 text-xs text-slate-600">
-              <span className="font-semibold text-blue-900">{customTaskType}</span>
+              <span className="font-semibold text-emerald-800">{customTaskType}</span>
               <span aria-hidden="true">·</span>
               <span>Custom Prompt Mode</span>
             </div>
@@ -413,7 +413,7 @@ export function Workspace({
               <button
                 type="button"
                 onClick={onBrowsePrompts}
-                className="text-xs font-medium text-blue-800 hover:underline whitespace-nowrap shrink-0"
+                className="text-xs font-medium text-emerald-700 hover:underline whitespace-nowrap shrink-0"
               >
                 All Prompts
               </button>
@@ -436,7 +436,7 @@ export function Workspace({
                         id="prompt-quick-select"
                         value={activePrompt.id}
                         onChange={(e) => onSelectPromptId(e.target.value)}
-                        className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-medium text-slate-800 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700/20"
+                        className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-medium text-slate-800 focus:border-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-600/20"
                       >
                         {prompts.map((p) => (
                           <option key={p.id} value={p.id}>
@@ -448,7 +448,7 @@ export function Workspace({
 
                     <div className="rounded-lg border border-slate-200 bg-slate-50/70 p-4">
                       <div className="flex items-center gap-2 text-xs text-slate-500 mb-2">
-                        <span className="font-semibold text-blue-900">{activePrompt.taskType}</span>
+                        <span className="font-semibold text-emerald-800">{activePrompt.taskType}</span>
                         <span aria-hidden="true">·</span>
                         <span>{activePrompt.category}</span>
                         <span aria-hidden="true">·</span>
@@ -503,7 +503,7 @@ export function Workspace({
                         value={customPromptText}
                         onChange={(e) => onCustomPromptTextChange(e.target.value)}
                         placeholder="Paste your IELTS Writing Task 1 or Task 2 question here..."
-                        className="w-full rounded-lg border border-slate-200 bg-white p-3 text-sm leading-relaxed text-slate-900 placeholder:text-slate-400 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700/20"
+                        className="w-full rounded-lg border border-slate-200 bg-white p-3 text-sm leading-relaxed text-slate-900 placeholder:text-slate-400 focus:border-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-600/20"
                       />
                     </div>
 
@@ -598,7 +598,7 @@ export function Workspace({
                           ? 'Overall upward trend in..., highest vs lowest...'
                           : 'Paraphrase topic + clear personal stance...'
                       }
-                      className="w-full rounded-lg border border-slate-200 bg-slate-50/50 p-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-700 focus:bg-white focus:outline-none"
+                      className="w-full rounded-lg border border-slate-200 bg-slate-50/50 p-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-emerald-600 focus:bg-white focus:outline-none"
                     />
                   </div>
 
@@ -613,7 +613,7 @@ export function Workspace({
                       value={outline.body1}
                       onChange={(e) => onOutlineChange({ ...outline, body1: e.target.value })}
                       placeholder="Topic sentence + supporting reasoning / key data figures..."
-                      className="w-full rounded-lg border border-slate-200 bg-slate-50/50 p-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-700 focus:bg-white focus:outline-none"
+                      className="w-full rounded-lg border border-slate-200 bg-slate-50/50 p-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-emerald-600 focus:bg-white focus:outline-none"
                     />
                   </div>
 
@@ -628,7 +628,7 @@ export function Workspace({
                       value={outline.body2}
                       onChange={(e) => onOutlineChange({ ...outline, body2: e.target.value })}
                       placeholder="Contrasting / reinforcing argument + specific evidence..."
-                      className="w-full rounded-lg border border-slate-200 bg-slate-50/50 p-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-700 focus:bg-white focus:outline-none"
+                      className="w-full rounded-lg border border-slate-200 bg-slate-50/50 p-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-emerald-600 focus:bg-white focus:outline-none"
                     />
                   </div>
 
@@ -645,7 +645,7 @@ export function Workspace({
                         onOutlineChange({ ...outline, conclusion: e.target.value })
                       }
                       placeholder="Synthesize main arguments without adding new claims..."
-                      className="w-full rounded-lg border border-slate-200 bg-slate-50/50 p-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-700 focus:bg-white focus:outline-none"
+                      className="w-full rounded-lg border border-slate-200 bg-slate-50/50 p-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-emerald-600 focus:bg-white focus:outline-none"
                     />
                   </div>
                 </div>
@@ -657,8 +657,8 @@ export function Workspace({
                 )}
 
                 {outlineFeedback && (
-                  <div className="rounded-lg border border-blue-200 bg-blue-50/40 p-4">
-                    <div className="mb-2 text-xs font-semibold text-blue-900">
+                  <div className="rounded-lg border border-emerald-200 bg-emerald-50/40 p-4">
+                    <div className="mb-2 text-xs font-semibold text-emerald-800">
                       Outline Feedback (TR & CC Advisor)
                     </div>
                     <MarkdownReport content={outlineFeedback} />
@@ -676,7 +676,7 @@ export function Workspace({
                   <ul className="mt-2.5 divide-y divide-slate-100 rounded-lg border border-slate-200">
                     {activePrompt.sampleCollocations.map((col) => (
                       <li key={col.phrase} className="px-3.5 py-2.5 text-sm">
-                        <div className="font-medium text-blue-950">{col.phrase}</div>
+                        <div className="font-medium text-emerald-950">{col.phrase}</div>
                         <div className="text-xs text-slate-600">{col.meaningVi}</div>
                       </li>
                     ))}
@@ -771,7 +771,7 @@ export function Workspace({
                   }`}
                   title="Chế độ thi tập trung không xao nhãng (Distraction-free Exam Mode)"
                 >
-                  {examMode ? <Minimize2 className="h-3.5 w-3.5 text-amber-700" /> : <Maximize2 className="h-3.5 w-3.5 text-blue-700" />}
+                  {examMode ? <Minimize2 className="h-3.5 w-3.5 text-amber-700" /> : <Maximize2 className="h-3.5 w-3.5 text-emerald-600" />}
                   <span>{examMode ? 'Thoát Focus' : 'Focus Mode'}</span>
                 </button>
                 {!isCustomPrompt && (
@@ -811,7 +811,7 @@ export function Workspace({
                 <div className="rounded-lg border border-slate-200 bg-slate-50/70 p-3.5">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex items-center gap-2.5">
-                      <ScanText className="h-4 w-4 text-blue-900 shrink-0" />
+                      <ScanText className="h-4 w-4 text-emerald-800 shrink-0" />
                       <div>
                         <div className="text-xs font-semibold text-slate-900">
                           Handwritten Essay OCR
@@ -881,7 +881,7 @@ export function Workspace({
                             })
                           }
                           disabled={isAnalyzing || isDigitizing}
-                          className="inline-flex items-center gap-1.5 rounded-md bg-blue-900 px-3 py-1.5 text-xs font-medium text-white hover:bg-blue-800 disabled:opacity-50"
+                          className="inline-flex items-center gap-1.5 rounded-md bg-emerald-700 px-3 py-1.5 text-xs font-medium text-white hover:bg-emerald-800 disabled:opacity-50"
                         >
                           <span>Analyze Image Directly</span>
                         </button>
@@ -913,7 +913,7 @@ export function Workspace({
                     onChange={(e) => onEssayTextChange(e.target.value)}
                     spellCheck={spellCheck}
                     placeholder={`Begin drafting your ${effectiveTaskType} response here...\n\nTip: Use the Outline Builder on the left to verify your thesis and paragraph logic before writing.`}
-                    className="min-h-[380px] w-full resize-y rounded-lg border border-slate-200 bg-white p-5 text-[15.5px] leading-[1.75] text-slate-900 placeholder:text-slate-400 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700/15"
+                    className="min-h-[380px] w-full resize-y rounded-lg border border-slate-200 bg-white p-5 text-[15.5px] leading-[1.75] text-slate-900 placeholder:text-slate-400 focus:border-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-600/15"
                   />
                 </div>
 
@@ -932,7 +932,7 @@ export function Workspace({
                       })
                     }
                     disabled={isAnalyzing || (!essayText.trim() && !ocrImageBase64)}
-                    className="inline-flex items-center justify-center rounded-lg bg-blue-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-600"
+                    className="inline-flex items-center justify-center rounded-lg bg-emerald-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-emerald-800 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-600"
                   >
                     {isAnalyzing ? 'Evaluating Response...' : 'Submit for Band Assessment'}
                   </button>

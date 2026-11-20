@@ -174,7 +174,7 @@ export function ClassroomView({ onGoWorkspaceWithPrompt }: ClassroomViewProps) {
           <button
             onClick={() => setRole('teacher')}
             className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-semibold transition-all ${
-              role === 'teacher' ? 'bg-white text-blue-900 shadow-xs' : 'text-slate-600 hover:text-slate-900'
+              role === 'teacher' ? 'bg-white text-emerald-800 shadow-xs' : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             <Users className="h-3.5 w-3.5" />
@@ -183,7 +183,7 @@ export function ClassroomView({ onGoWorkspaceWithPrompt }: ClassroomViewProps) {
           <button
             onClick={() => setRole('student')}
             className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-semibold transition-all ${
-              role === 'student' ? 'bg-white text-blue-900 shadow-xs' : 'text-slate-600 hover:text-slate-900'
+              role === 'student' ? 'bg-white text-emerald-800 shadow-xs' : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             <GraduationCap className="h-3.5 w-3.5" />
@@ -197,7 +197,7 @@ export function ClassroomView({ onGoWorkspaceWithPrompt }: ClassroomViewProps) {
         <div>
           <div className="flex items-center gap-2">
             <h2 className="font-serif text-lg font-bold text-slate-900">{INITIAL_CLASSROOMS[0].name}</h2>
-            <span className="rounded bg-blue-100 px-2 py-0.5 font-mono text-xs font-semibold text-blue-800">
+            <span className="rounded bg-emerald-100 px-2 py-0.5 font-mono text-xs font-semibold text-emerald-700">
               {INITIAL_CLASSROOMS[0].code}
             </span>
             <span className="rounded bg-slate-100 px-2 py-0.5 font-mono text-xs text-slate-600">
@@ -261,7 +261,7 @@ export function ClassroomView({ onGoWorkspaceWithPrompt }: ClassroomViewProps) {
                       <td className="px-4 py-3.5 text-right font-mono font-medium text-slate-600">
                         {sub.aiBandScores.overall?.toFixed(1) ?? '—'}
                       </td>
-                      <td className="px-4 py-3.5 text-right font-mono font-bold text-blue-900">
+                      <td className="px-4 py-3.5 text-right font-mono font-bold text-emerald-800">
                         {finalOverall?.toFixed(1) ?? '—'}
                       </td>
                       <td className="px-4 py-3.5 text-center">
@@ -280,7 +280,7 @@ export function ClassroomView({ onGoWorkspaceWithPrompt }: ClassroomViewProps) {
                       <td className="px-4 py-3.5 text-right">
                         <button
                           onClick={() => handleOpenReview(sub)}
-                          className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-blue-900 hover:bg-slate-50 shadow-xs"
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-emerald-800 hover:bg-slate-50 shadow-xs"
                         >
                           <Edit3 className="h-3.5 w-3.5" />
                           <span>{isGraded ? 'Xem lại / Sửa' : 'Chấm & Duyệt'}</span>
@@ -310,7 +310,7 @@ export function ClassroomView({ onGoWorkspaceWithPrompt }: ClassroomViewProps) {
               >
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="rounded bg-blue-100 px-2 py-0.5 font-mono text-xs font-bold text-blue-900">
+                    <span className="rounded bg-emerald-100 px-2 py-0.5 font-mono text-xs font-bold text-emerald-800">
                       {asg.taskType}
                     </span>
                     <h4 className="font-serif text-base font-bold text-slate-900">{asg.promptTitle}</h4>
@@ -329,7 +329,7 @@ export function ClassroomView({ onGoWorkspaceWithPrompt }: ClassroomViewProps) {
 
                 <button
                   onClick={() => onGoWorkspaceWithPrompt?.(asg.promptText, asg.taskType)}
-                  className="inline-flex items-center gap-1.5 rounded-lg bg-blue-900 px-4 py-2 text-xs font-medium text-white hover:bg-blue-800 shrink-0 shadow-xs"
+                  className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-700 px-4 py-2 text-xs font-medium text-white hover:bg-emerald-800 shrink-0 shadow-xs"
                 >
                   <span>Làm bài ngay</span>
                   <ArrowRight className="h-4 w-4" />
@@ -370,8 +370,8 @@ export function ClassroomView({ onGoWorkspaceWithPrompt }: ClassroomViewProps) {
               </div>
 
               {/* Score Overrides */}
-              <div className="rounded-xl border border-blue-200 bg-blue-50/50 p-4">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-blue-900 mb-3">
+              <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-4">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-3">
                   Điều chỉnh Band Score (Human-in-the-Loop)
                 </h4>
                 <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
@@ -424,7 +424,7 @@ export function ClassroomView({ onGoWorkspaceWithPrompt }: ClassroomViewProps) {
                     />
                   </div>
                   <div>
-                    <label className="text-[11px] font-semibold text-blue-900">OVERALL:</label>
+                    <label className="text-[11px] font-semibold text-emerald-800">OVERALL:</label>
                     <input
                       type="number"
                       step="0.5"
@@ -432,7 +432,7 @@ export function ClassroomView({ onGoWorkspaceWithPrompt }: ClassroomViewProps) {
                       max="9"
                       value={editingScores.overall}
                       onChange={(e) => setEditingScores({ ...editingScores, overall: Number(e.target.value) })}
-                      className="mt-1 w-full rounded border-2 border-blue-600 p-1.5 text-center font-mono font-extrabold text-sm bg-white text-blue-900"
+                      className="mt-1 w-full rounded border-2 border-emerald-600 p-1.5 text-center font-mono font-extrabold text-sm bg-white text-emerald-800"
                     />
                   </div>
                 </div>
@@ -448,7 +448,7 @@ export function ClassroomView({ onGoWorkspaceWithPrompt }: ClassroomViewProps) {
                   onChange={(e) => setTeacherNotes(e.target.value)}
                   rows={4}
                   placeholder="Nhận xét điểm mạnh, điểm cần khắc phục và định hướng cho học sinh..."
-                  className="mt-1.5 w-full rounded-lg border border-slate-300 p-3 text-xs leading-relaxed focus:border-blue-700 focus:outline-none"
+                  className="mt-1.5 w-full rounded-lg border border-slate-300 p-3 text-xs leading-relaxed focus:border-emerald-600 focus:outline-none"
                 />
               </div>
             </div>

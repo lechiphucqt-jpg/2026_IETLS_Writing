@@ -52,7 +52,7 @@ export function SettingsModal({
       <div className="w-full max-w-xl rounded-2xl bg-white p-6 sm:p-8 shadow-2xl my-8 border border-slate-200">
         <div className="flex items-center justify-between border-b border-slate-100 pb-4">
           <div className="flex items-center gap-2">
-            <Key className="h-5 w-5 text-blue-700" />
+            <Key className="h-5 w-5 text-emerald-600" />
             <h2 className="font-serif text-xl font-bold text-slate-900">
               Cấu Hình Model AI & Google Gemini API Key
             </h2>
@@ -103,7 +103,7 @@ export function SettingsModal({
                 value={apiKey}
                 onChange={(e) => setApiKey(e.target.value)}
                 placeholder="AIzaSy..."
-                className="w-full rounded-xl border border-slate-300 bg-slate-50/50 p-3 pr-10 font-mono text-sm focus:border-blue-700 focus:bg-white focus:outline-none"
+                className="w-full rounded-xl border border-slate-300 bg-slate-50/50 p-3 pr-10 font-mono text-sm focus:border-emerald-600 focus:bg-white focus:outline-none"
               />
               <Key className="absolute right-3.5 top-3.5 h-4 w-4 text-slate-400" />
             </div>
@@ -126,7 +126,7 @@ export function SettingsModal({
                     onClick={() => setSelectedModel(m.id)}
                     className={`cursor-pointer rounded-xl border p-3.5 transition-all flex items-start justify-between ${
                       isSelected
-                        ? 'border-blue-700 bg-blue-50/50 shadow-xs'
+                        ? 'border-emerald-600 bg-emerald-50/50 shadow-xs'
                         : 'border-slate-200 hover:border-slate-300 bg-white'
                     }`}
                   >
@@ -149,7 +149,7 @@ export function SettingsModal({
                     <div
                       className={`h-4 w-4 rounded-full border flex items-center justify-center shrink-0 mt-1 ${
                         isSelected
-                          ? 'border-blue-700 bg-blue-700 text-white'
+                          ? 'border-emerald-600 bg-emerald-700 text-white'
                           : 'border-slate-300'
                       }`}
                     >
@@ -180,7 +180,7 @@ export function SettingsModal({
             )}
             <button
               onClick={handleSave}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-blue-900 px-5 py-2 text-xs font-semibold text-white shadow-xs hover:bg-blue-800 transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-700 px-5 py-2 text-xs font-semibold text-white shadow-xs hover:bg-emerald-800 transition-colors"
             >
               {isSaved ? (
                 <>

@@ -124,7 +124,7 @@ export function AnalyticsView({ history, onGoWorkspace }: AnalyticsViewProps) {
           <select
             value={targetBand}
             onChange={(e) => setTargetBand(Number(e.target.value))}
-            className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-blue-900 shadow-sm focus:border-blue-700 focus:outline-none"
+            className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-emerald-800 shadow-sm focus:border-emerald-600 focus:outline-none"
           >
             <option value={6.5}>Band 6.5 (Competent)</option>
             <option value={7.0}>Band 7.0 (Good User)</option>
@@ -139,10 +139,10 @@ export function AnalyticsView({ history, onGoWorkspace }: AnalyticsViewProps) {
       <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
         <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-xs">
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
-            <TrendingUp className="h-4 w-4 text-blue-700" />
+            <TrendingUp className="h-4 w-4 text-emerald-600" />
             <span>Average Band</span>
           </div>
-          <div className="mt-2 font-serif text-3xl font-bold text-blue-950">
+          <div className="mt-2 font-serif text-3xl font-bold text-emerald-950">
             {stats.avgOverall > 0 ? stats.avgOverall.toFixed(1) : '—'}
           </div>
           <div className="mt-1 text-xs text-slate-500">
@@ -192,7 +192,7 @@ export function AnalyticsView({ history, onGoWorkspace }: AnalyticsViewProps) {
           </p>
           <button
             onClick={onGoWorkspace}
-            className="mt-5 rounded-lg bg-blue-900 px-5 py-2 text-sm font-medium text-white hover:bg-blue-800"
+            className="mt-5 rounded-lg bg-emerald-700 px-5 py-2 text-sm font-medium text-white hover:bg-emerald-800"
           >
             Đến Workspace làm bài ngay
           </button>
@@ -206,8 +206,8 @@ export function AnalyticsView({ history, onGoWorkspace }: AnalyticsViewProps) {
                 1. Biểu Đồ Mạng Nhện 4 Tiêu Chí (Radar Chart)
               </h2>
               <div className="flex items-center gap-3 text-xs">
-                <span className="flex items-center gap-1 font-medium text-blue-800">
-                  <span className="h-2.5 w-2.5 rounded-full bg-blue-700"></span> Điểm Bạn
+                <span className="flex items-center gap-1 font-medium text-emerald-700">
+                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-700"></span> Điểm Bạn
                 </span>
                 <span className="flex items-center gap-1 font-medium text-amber-600">
                   <span className="h-2.5 w-2.5 rounded-full border border-amber-600 bg-amber-100"></span> Mục Tiêu
@@ -287,8 +287,8 @@ export function AnalyticsView({ history, onGoWorkspace }: AnalyticsViewProps) {
                 {/* User Current Performance Polygon */}
                 <polygon
                   points={userPoints}
-                  fill="rgba(30, 58, 138, 0.25)"
-                  stroke="#1e3a8a"
+                  fill="rgba(21, 128, 61, 0.25)"
+                  stroke="#15803d"
                   strokeWidth="2.5"
                 />
 
@@ -302,12 +302,12 @@ export function AnalyticsView({ history, onGoWorkspace }: AnalyticsViewProps) {
                   const coord = getCoordinates(pt.val || 5.0, pt.idx);
                   return (
                     <g key={pt.label}>
-                      <circle cx={coord.x} cy={coord.y} r="5" fill="#1e3a8a" stroke="#ffffff" strokeWidth="2" />
+                      <circle cx={coord.x} cy={coord.y} r="5" fill="#15803d" stroke="#ffffff" strokeWidth="2" />
                       <text
                         x={coord.x + (pt.idx === 1 ? 8 : pt.idx === 3 ? -8 : 0)}
                         y={coord.y + (pt.idx === 2 ? 14 : pt.idx === 0 ? -8 : 4)}
                         textAnchor={pt.idx === 1 ? 'start' : pt.idx === 3 ? 'end' : 'middle'}
-                        className="font-mono text-[11px] font-bold fill-blue-900"
+                        className="font-mono text-[11px] font-bold fill-emerald-800"
                       >
                         {pt.val.toFixed(1)}
                       </text>
@@ -380,7 +380,7 @@ export function AnalyticsView({ history, onGoWorkspace }: AnalyticsViewProps) {
                         <>
                           <polyline
                             fill="none"
-                            stroke="#2563eb"
+                            stroke="#059669"
                             strokeWidth="2.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -392,8 +392,8 @@ export function AnalyticsView({ history, onGoWorkspace }: AnalyticsViewProps) {
                             const y = 140 - ((score - 4.0) / 5.0) * 120;
                             return (
                               <g key={item.id}>
-                                <circle cx={x} cy={y} r="4" fill="#1e3a8a" stroke="#ffffff" strokeWidth="2" />
-                                <text x={x} y={y - 8} fontSize="10" textAnchor="middle" className="font-mono font-bold fill-blue-900">
+                                <circle cx={x} cy={y} r="4" fill="#15803d" stroke="#ffffff" strokeWidth="2" />
+                                <text x={x} y={y - 8} fontSize="10" textAnchor="middle" className="font-mono font-bold fill-emerald-800">
                                   {score.toFixed(1)}
                                 </text>
                               </g>
