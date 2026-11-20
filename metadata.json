@@ -1,0 +1,6 @@
+{
+  "name": "IELTS Writing Master",
+  "description": "Split-screen IELTS Writing Task 1 and Task 2 practice workspace with structured outlining, handwritten OCR digitization, and bilingual Band 7.0-9.0 academic feedback.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
